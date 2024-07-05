@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+
+<robot name="Chaser">
+
+  <!-- Colors -->
+  <material name="Grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="Orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="Blue">
+  <color rgba="0.5 0.7 1.0 1.0"/>      
+  </material>
+  <material name="Red">
+    <color rgba="1 0 0 1.0"/>      
+  </material>
+
+    <!-- Link 1 -->
+  <link name="Link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.2"/>
+      </geometry>
+      <material name="Blue"/>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.1"/>
+      </geometry>
+      <material name="Orange"/>
+    </collision>
+  </link>
+  <!-- Joint 2 -->
+  <joint name="Joint_2" type="revolute">
+    <parent link="Link_1"/>
+    <child link="Link_2"/>
+    <origin rpy="0 0 0" xyz="0 0 0.2"/>
+    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+    <!-- Link 2 -->
+  <link name="Link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.375"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.375"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.75"/>
+      </geometry>
+      <material name="Blue"/>
+    </collision>
+    <collision>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.075" length="0.15"/>
+      </geometry>
+      <material name="Orange"/>
+    </collision>
+  </link>
+  <!-- Joint 3 -->
+  <joint name="Joint_3" type="revolute">
+    <parent link="Link_2"/>
+    <child link="Link_3"/>
+    <origin rpy="0 0 0" xyz="0 0 0.75"/>
+    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+    <!-- Link 3 -->
+  <link name="Link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.375"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.375"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.75"/>
+      </geometry>
+      <material name="Blue"/>
+    </collision>
+    <collision>
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.075" length="0.15"/>
+      </geometry>
+      <material name="Orange"/>
+    </collision>
+  </link>
+  <!-- Joint End-Effector -->
+  <joint name="Joint_EE" type="fixed">
+    <parent link="Link_3"/>
+    <child link="Link_EE"/>
+    <origin rpy="0 0 0" xyz="0 0 0.75"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+    <!-- End-Effector -->
+  <link name="Link_EE">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.1"/>
+      </geometry>
+      <material name="Red"/>
+    </collision>
+  </link>
+  
+</robot>
+
