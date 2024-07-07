@@ -2,8 +2,13 @@
 
 [[Project page]](https://energy-based-model.github.io/potential-motion-plan/)
 [[Paper]](https://energy-based-model.github.io/potential-motion-plan/potential_motion_plan.pdf)
+[![][colab]][maze2d-eval-demo]
 <!-- [[Data]]() -->
 <!-- [Colab]() -->
+<!-- declare varibles -->
+[colab]: <https://colab.research.google.com/assets/colab-badge.svg>
+[maze2d-eval-demo]: <https://colab.research.google.com/drive/1pARD89PfSzF3Ml6virZjztEJKWhXVkBY?usp=sharing>
+
 
 
 [Yunhao Luo](http://cheng-chi.github.io/)<sup>1</sup>,
@@ -32,7 +37,8 @@ This is the official codebase for Potential Based Diffusion Motion Planning [ICM
 
 
 
-<!-- ## 🛝 Try it out! -->
+## 🛝 Try it out!
+We provide a Google Colab notebook [![][colab]][maze2d-eval-demo] for the Maze2D enviornments.  In this notebook, you can enter your own obstacle locations and set the agent's start/goal positions, and use the pre-trained model to generate motion plans. Additional jupyter notebook demos can be found in the `examples` directory.
 <!-- Check out our Google Colab notebooks for motion plan generation here. -->
 
 

@@ -67,7 +67,7 @@ class RandMaze2DEnv(AbsStaticMaze2DEnv, OfflineEnv, PybulletEnv, EzPickle): # ma
         self.min_episode_distance = kwargs.get('min_episode_distance', self.maze_size[0] / 2 * 1.4)
         self.epi_dist_type = kwargs.get('epi_dist_type', 'sum')
 
-        print(Fore.BLUE + f'epd: {self.min_episode_distance}, {self.epi_dist_type}' + Fore.RESET)
+        # print(Fore.BLUE + f'epd: {self.min_episode_distance}, {self.epi_dist_type}' + Fore.RESET)
         self.sample_cnt_limit = 1e5
         self.env_id = 'static_maze2d'
         self.kwargs = kwargs # from mazelist_config
