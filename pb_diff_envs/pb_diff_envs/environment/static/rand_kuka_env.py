@@ -52,8 +52,7 @@ class RandKukaEnv(StaticEnv, OfflineEnv, PybulletEnv, EzPickle):
                              action_high=self.robot.joints_max_force)
         OfflineEnv.__init__(self, **kwargs)
         
-        ## could be an arg, then faster
-        ## other choice: SippPlanner, GNNStaticPlanner
+
         ## seed not implement yet
         seed_planner = kwargs.get('seed_planner', None)
         assert seed_planner is None, 'seed planner will not affect performance'

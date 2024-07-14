@@ -54,15 +54,14 @@ class RandDualKuka14dEnv(StaticEnv, OfflineEnv, PybulletEnv, EzPickle):
                              action_high=self.robot.joints_max_force)
         OfflineEnv.__init__(self, **kwargs)
         
-        ## could be an arg, then faster
-        ## other choice: SippPlanner, GNNStaticPlanner
+
         ## seed not implement yet
         seed_planner = kwargs.get('seed_planner', None)
         assert seed_planner is None
         planner_num_batch = kwargs.get('planner_num_batch', 200)
         self.planner = BITStarPlanner(num_batch=planner_num_batch, stop_when_success=True, seed=seed_planner)
         self.planner_timeout = kwargs.get('planner_timeout', 90) # seconds
-        # self.planner = SippPlanner(num_samples=500, stop_when_success=True, k_neighbors=20)
+
         self.planner_val = self.planner
 
         self.o_env = ObstaclePositionWrapper(self)

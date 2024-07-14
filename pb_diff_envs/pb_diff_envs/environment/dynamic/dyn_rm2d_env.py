@@ -79,8 +79,7 @@ class DynamicRandMaze2DEnv(AbsDynamicMaze2DEnv, OfflineEnv, PybulletEnv, EzPickl
         EzPickle.__init__(self, wall_locations, wall_hExts, 
                           robot_config, renderer_config={}, **kwargs)
         
-        ## could be an arg, then faster
-        ## other choice: SippPlanner, GNNStaticPlanner
+
         seed_planner = kwargs.get('seed_planner', None)
         assert seed_planner is None, 'seed planner will not affect performance'
         planner_num_batch = kwargs.get('planner_num_batch', 1000)

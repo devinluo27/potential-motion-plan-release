@@ -1,5 +1,4 @@
 from pb_diff_envs.environment.static.rand_kuka_env import RandKukaEnv
-# from pb_diff_envs.environment.dynamic.dyn_kuka_env_gnn import DynKukaEnv_GNN
 from pb_diff_envs.environment.static.dualkuka_rand_vgrp import DualKuka_VoxelRandGroupList
 
 class Kuka_VoxelRandGroupList(DualKuka_VoxelRandGroupList):

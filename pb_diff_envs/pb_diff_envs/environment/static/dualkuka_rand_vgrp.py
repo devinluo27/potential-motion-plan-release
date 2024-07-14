@@ -5,7 +5,6 @@ import pdb
 from typing import Union
 from pb_diff_envs.environment.offline_env import OfflineEnv
 from pb_diff_envs.environment.static.rand_dualkuka14d_env import RandDualKuka14dEnv
-# from pb_diff_envs.environment.dynamic.dyn_kuka_env_gnn import DynKukaEnv_GNN
 from pb_diff_envs.environment.static.rand_kuka_env import RandKukaEnv
 from pb_diff_envs.environment.pybullet_env import PybulletEnv
 import math, os
@@ -23,7 +22,7 @@ class DualKuka_VoxelRandGroupList(OfflineEnv, PybulletEnv):
 
         '''
         self.robot_env = robot_env # a class to call
-        assert self.robot_env in [RandDualKuka14dEnv, RandKukaEnv,] # DynDualKuka14dEnv_GNN, DynKukaEnv_GNN]
+        assert self.robot_env in [RandDualKuka14dEnv, RandKukaEnv,]
 
         '''when eval, use a different seed to generate voxel loc!
         used when generating val problems
@@ -54,9 +53,9 @@ class DualKuka_VoxelRandGroupList(OfflineEnv, PybulletEnv):
         assert hExt_range.shape == (3,)
 
         # ----- setup config to init robot env ------
-        if self.robot_env in [RandDualKuka14dEnv,]: # DynDualKuka14dEnv_GNN]:
+        if self.robot_env in [RandDualKuka14dEnv,]:
             c_eps = 0.06
-        elif self.robot_env in [RandKukaEnv,]: # DynKukaEnv_GNN]:
+        elif self.robot_env in [RandKukaEnv,]:
             c_eps = 0.04
         self.robot_config = dict(collision_eps=c_eps)
         self.world_dim = 3
@@ -155,7 +154,7 @@ class DualKuka_VoxelRandGroupList(OfflineEnv, PybulletEnv):
                                 action_high=dummy+1)
         
         
-        # ------- 5. Do some Checking ------
+        # ------- 5. Do some Checking if necessary -------
         ## ...
         self.env_type = 'dualkuka14d'
 
