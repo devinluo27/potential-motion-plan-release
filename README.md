@@ -1,7 +1,7 @@
 # Potential Based Diffusion Motion Planning
 
 [[Project page]](https://energy-based-model.github.io/potential-motion-plan/)
-[[Paper]](https://energy-based-model.github.io/potential-motion-plan/potential_motion_plan.pdf)
+[[Paper]](https://arxiv.org/abs/2407.06169)
 [![][colab]][maze2d-eval-demo]
 <!-- [[Data]]() -->
 <!-- [Colab]() -->
@@ -11,7 +11,7 @@
 
 
 
-[Yunhao Luo](http://cheng-chi.github.io/)<sup>1</sup>,
+[Yunhao Luo](https://devinluo27.github.io/)<sup>1</sup>,
 [Chen Sun](https://chensun.me/)<sup>1</sup>,
 [Joshua B. Tenenbaum](https://web.mit.edu/cocosci/josh.html)<sup>2</sup>,
 [Yilun Du](https://yilundu.github.io/)<sup>2</sup>
