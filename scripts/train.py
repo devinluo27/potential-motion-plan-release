@@ -12,7 +12,7 @@ torch.backends.cudnn.benchmark = True
 #-----------------------------------------------------------------------------#
 
 class Parser(utils.Parser):
-    dataset: str
+    dataset: str = None
     config: str = 'config/rm2d/rSmaze_engy_testOnly.py'
 
 ## **set dataset in parse_args automatically
