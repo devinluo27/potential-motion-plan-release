@@ -16,7 +16,6 @@ from tap import Tap
 
 
 class Parser(Tap):
-    dataset: str
     config: str 
     plan_n_maze: int
     cond_w: list = None
